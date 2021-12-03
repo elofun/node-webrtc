@@ -1,32 +1,33 @@
 {
-  "name": "wrtc",
-  "private": true,
+  "name": "@elofun/wrtc",
+  "private": false,
   "description": "Standards-compliant WebRTC implementation for Node",
   "keywords": [
     "webrtc",
     "p2p",
     "peer"
   ],
-  "version": "0.4.7-dev",
+  "version": "0.4.7a",
   "author": "Alan K <ack@modeswitch.org> (http://blog.modeswitch.org)",
   "homepage": "https://github.com/node-webrtc/node-webrtc",
   "bugs": "https://github.com/node-webrtc/node-webrtc/issues",
   "license": "BSD-2-Clause",
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/node-webrtc/node-webrtc.git"
-  },
   "main": "lib/index.js",
   "browser": "lib/browser.js",
   "binary": {
     "module_name": "wrtc",
     "module_path": "./build/{configuration}/",
-    "remote_path": "./{module_name}/v{version}/{configuration}/",
+    "remote_path": "./{module_name}/v0.4.7/{configuration}/",
     "package_name": "{platform}-{arch}.tar.gz",
     "host": "https://node-webrtc.s3.amazonaws.com"
   },
   "engines": {
     "node": "^8.11.2 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elofun/elo-packages.git",
+    "directory": "wrtc"
   },
   "dependencies": {
     "@mapbox/node-pre-gyp": "^1.0.4",
