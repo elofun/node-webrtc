@@ -7,23 +7,20 @@
     "p2p",
     "peer"
   ],
-  "version": "0.4.7a",
+  "version": "0.4.7g",
   "author": "Alan K <ack@modeswitch.org> (http://blog.modeswitch.org)",
   "homepage": "https://github.com/node-webrtc/node-webrtc",
   "bugs": "https://github.com/node-webrtc/node-webrtc/issues",
   "license": "BSD-2-Clause",
   "main": "lib/index.js",
   "browser": "lib/browser.js",
-  "binary": {
-    "module_name": "wrtc",
-    "module_path": "./build/{configuration}/",
-    "remote_path": "./{module_name}/v0.4.7/{configuration}/",
-    "package_name": "{platform}-{arch}.tar.gz",
-    "host": "https://node-webrtc.s3.amazonaws.com"
-  },
   "engines": {
     "node": "^8.11.2 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0 || ^14.0.0 || ^15.0.0"
   },
+  "files": [
+    "build/Release/wrtc.node",
+    "lib"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/elofun/elo-packages.git",
@@ -76,16 +73,6 @@
     "ws": "^5.2.0"
   },
   "scripts": {
-    "install": "node scripts/download-prebuilt-or-build-from-source.js",
-    "install-example": "node scripts/install-example.js",
-    "lint": "eslint lib/*.js lib/**/*.js test/*.js test/**/*.js karma/*.js scripts/*.js",
-    "publish-binary": "node scripts/publish.js",
-    "test": "node --expose-gc test/all.js",
-    "test:browsers": "cross-env BROWSER=chrome node scripts/karma.js && cross-env BROWSER=firefox node scripts/karma.js",
-    "test:electron": "electron test/electron",
-    "wpt:init": "git submodule update --init --recursive",
-    "wpt:reset": "rimraf ./test/web-platform-tests/tests && npm run wpt:init",
-    "wpt:test": "mocha test/web-platform-tests/run-wpts.js --exit",
-    "wpt:update": "git submodule update --recursive --remote --force && cd test/web-platform-tests/tests && python wpt.py manifest --path ../wpt-manifest.json"
+    "build": "docker-compose -f build.yml up"
   }
 }

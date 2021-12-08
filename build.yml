@@ -1,0 +1,9 @@
+version: "3.4"
+
+services:
+  wrtc:
+    image: elofun/node14-make
+    volumes:
+      - ./:/app
+    working_dir: /app
+    command: bash -c "npm install -g node-cmake && npm i && node scripts/build-from-source.js && node --expose-gc test/all.js"
