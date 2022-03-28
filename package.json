@@ -1,5 +1,5 @@
 {
-  "name": "@elofun/wrtc",
+  "name": "rtc-connection",
   "private": false,
   "description": "Standards-compliant WebRTC implementation for Node",
   "keywords": [
@@ -21,11 +21,6 @@
     "build/Release/wrtc.node",
     "lib"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/elofun/elo-packages.git",
-    "directory": "wrtc"
-  },
   "dependencies": {
     "@mapbox/node-pre-gyp": "^1.0.4",
     "nan": "^2.3.2",
